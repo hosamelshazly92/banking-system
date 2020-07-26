@@ -5,27 +5,27 @@
 ### Client:
 
 National ID (primary key, 14 characters, numbers only),<br>
-Name,
+Name,<br>
 Phone number
 
 ### Account:
 
-ID,
-Balance,
+ID,<br>
+Balance,<br>
 Client National ID
 
 ## Functionality:
 
 ### Accounts:
 
-Creation,
-Deposit (update),
-Withdraw (update),
-Transfer between accounts (2 updates),
+Creation,<br>
+Deposit (update),<br>
+Withdraw (update),<br>
+Transfer between accounts (2 updates),<br>
 Delete
 
 ### Clients:
 
-Creation,
-Delete (2 deletions -> client + account),
+Creation,<br>
+Delete (2 deletions -> client + account),<br>
 Display list of accounts
