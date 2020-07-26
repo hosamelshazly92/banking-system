@@ -1,27 +1,31 @@
 # banking-system
 
-Database (models + relations):
+# Database (models + relations):
 
 Client:
-National ID (primary key, 14 characters, numbers only)
-Name
+
+National ID (primary key, 14 characters, numbers only),
+Name,
 Phone number
 
 Account:
-ID
-Balance
+
+ID,
+Balance,
 Client National ID
 
-Functionality:
+# Functionality:
 
 Accounts:
-Creation
-Deposit (update)
-Withdraw (update)
-Transfer between accounts (2 updates)
+
+Creation,
+Deposit (update),
+Withdraw (update),
+Transfer between accounts (2 updates),
 Delete
 
 Clients:
-Creation
-Delete (2 deletions -> client + account)
+
+Creation,
+Delete (2 deletions -> client + account),
 Display list of accounts
