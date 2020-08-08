@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+{% block title %}Main Page{% endblock %}
+{% block content %}
+    <header>
+        <h1>Home Page</h1>
+    </header>
+
+    <form method="POST" action="/person">
+        <label for="first_name">First Name:</label>
+        <input id="first_name" type="text" name="first_name">
+
+        <label for="last_name">Last Name:</label>
+        <input id="last_name" type="text" name="last_name">
+
+        <label for="vip">Gold Member:</label>
+        <select id="vip" name="vip">
+            <option value=" ">Yes</option>
+            <option value="">No</option>
+        </select>
+
+        <input id="register" type="submit" value="Register">
+    </form>
+
+    <section>
+        <a href="/person">View Registerd Clients</a>
+        <a href="/account">View All Accounts</a>
+    </section>
+{% endblock %}

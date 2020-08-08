@@ -1,0 +1,31 @@
+
+DELETE FROM account;
+DELETE FROM person;
+
+ALTER SEQUENCE person_id_seq RESTART WITH 1;
+ALTER SEQUENCE account_id_seq RESTART WITH 1;
+
+INSERT INTO person
+(first_name, last_name, vip) 
+VALUES 
+('Kaydee', 'Shea', False),
+('Clarissa', 'Baker', True),
+('May', 'Thatcher', True),
+('Yusef', 'Craig', False),
+('Leroy', 'Beech', False);
+
+INSERT INTO account
+(person_id, balance)
+VALUES
+(1, 20000),
+(1, 25000),
+(1, 10000),
+(2, 5000000),
+(2, 3000000),
+(3, 3000000),
+(3, 2500000),
+(4, 60000),
+(4, 95000),
+(4, 35000),
+(5, 3000),
+(5, 1000);

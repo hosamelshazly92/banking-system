@@ -1,0 +1,63 @@
+{% extends 'main.html' %}
+{% block title %}Account{% endblock %}
+{% block content %}
+    <header>
+        <h1>{{persons.first_name}} {{persons.last_name}} Account</h1>
+    </header>
+
+    <section>
+        <div>
+            <a id="edit" href="/person/{{persons.id}}/edit">Edit</a>
+            <a id="delete" data-id={{persons.id}} href="#">Delete</a>
+        </div>
+
+        <div>
+            <h3>Full Name:</h3>
+            <span>{{persons.first_name}} {{persons.last_name}}</span>
+            <span class="red">
+                ({% if persons.vip %}Gold Member{% else %}Not a Gold Member{% endif %})
+            </span>
+        </div>
+
+        <div>
+            <h3>
+                {% if counts == 0 %} There are no registered accounts {% else %} No. of Accounts: {{counts}} {% endif %}
+            </h3>
+
+            <hr>
+
+            <h3>Create New Account:</h3>
+            <label>Add Balance</label>
+            <input id="new_balance" type="number" name="new_balance">
+            <input id="create" data-id={{persons.id}} type="submit" value="Create">
+
+            <a href="/person">Go Backward</a>
+            <a href="/">Go To Homepage</a>
+        </div>
+    </section>
+
+    <table>
+        <tr>
+            <th>Account No.</th>
+            <th>Balance</th>
+            <th>Deposit</th>
+            <th>Withdraw</th>
+            <th>Submit</th>
+            <th>Remove</th>
+        </tr>
+        {% for account in accounts %}
+        <tr>
+            <td>{{account.id}}</td>
+            <td>{{"{:,.2f}".format(account.balance)}} EGP</td>
+            <td><input id="deposit" type="number" name="deposit" value="0"></td>
+            <td><input id="withdraw" type="number" name="withdraw" value="0"></td>
+            <td><input id="submit" data-id={{account.id}} type="submit" value="&check;"></td>
+            <td><input id="remove" data-id={{account.id}} type="submit" value="&cross;"></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <script src="{{url_for('static', filename='js/delete.js')}}"></script>
+    <script src="{{url_for('static', filename='js/create.js')}}"></script>
+    <script src="{{url_for('static', filename='js/edit.js')}}"></script>
+{% endblock %}

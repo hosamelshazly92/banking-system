@@ -1,0 +1,48 @@
+{% extends 'main.html' %}
+{% block title %}Accounts{% endblock %}
+{% block content %}
+    <header>
+        <h1>Accounts List</h1>
+    </header>
+
+    <section>
+        <table>
+            <tr>
+                <th>Full Name</th>
+                <th>VIP</th>
+                <th>No. Accounts</th>
+            </tr>
+            {% for person in persons %}
+            <tr>
+                <td>{{person.first_name}} {{person.last_name}}</td>
+                <td>{% if person.vip %} Yes {% else %} No {% endif %}</td>
+                <td>{{person.accounts|length}}</td>
+            </tr>
+            {% endfor %}
+            
+        </table>
+
+        <a href="/">Go Back</a>
+    </section>
+
+    <section>
+        <h3>Number of Accounts: {{counts}}</h3>
+
+        <table>
+            <tr>
+                <th>Full Name</th>
+                <th>VIP</th>
+                <th>Account ID</th>
+            </tr>
+            {% for item in items %}
+            <tr>
+                <td>{{item[0].first_name}} {{item[0].last_name}}</td>
+                <td>{% if item[0].vip %} Yes {% else %} No {% endif %}</td>
+                <td>{{item[1].id}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <a href="/">Go Back</a>
+    </section>
+{% endblock %}

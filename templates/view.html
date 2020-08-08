@@ -1,0 +1,21 @@
+{% extends 'main.html' %}
+{% block title %}Clients{% endblock %}
+{% block content %}
+    <header>
+        <h1>Clients List</h1>
+    </header>
+
+    <section>
+        <ul>
+            {% for person in persons %}
+            <li>
+                <a href="/person/{{person.id}}">{{ person.first_name }} {{ person.last_name }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+
+        <hr>
+
+        <a href="/">Go Back</a>
+    </section>
+{% endblock %}

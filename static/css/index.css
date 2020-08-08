@@ -1,0 +1,60 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+
+header {
+    text-align: center;
+}
+
+form, section {
+    margin: 25px 50px;
+    padding: 25px 50px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+a, #confirm, #register {
+    display: block;
+    margin-top: 5px;
+}
+
+.red {
+    color: rgb(252, 30, 30);
+}
+
+table, tr {
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+}
+
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+#remove {
+    width: 50px;
+    border: none;
+    color: white;
+    background-color: tomato;
+    cursor: pointer;
+}
+
+#submit {
+    width: 50px;
+    border: none;
+    color: white;
+    background-color: rgb(47, 236, 57);
+    cursor: pointer;
+}
+
+#deposit, #withdraw {
+    width: 100px;
+}
